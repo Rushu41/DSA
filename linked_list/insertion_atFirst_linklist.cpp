@@ -7,7 +7,7 @@ struct node{
 };
 struct node* create(int data)
 {
-    struct node* n = (struct node*)malloc(sizeof(struct node*));
+    struct node* n = (struct node*)malloc(sizeof(struct node));
     n->data = data;
     n->next = NULL;
 }
@@ -22,7 +22,7 @@ void linklist(struct node* link)
 }
 struct node* insertfirst(struct node* head, int data)
 {
-    struct node* ptr = (node*)malloc(sizeof(node*));
+    struct node* ptr = (node*)malloc(sizeof(node));
     ptr->next = head;
     ptr->data = data;
     return ptr;

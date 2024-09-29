@@ -7,7 +7,7 @@ struct node{
 };
 struct node* create(int data)
 {
-    node* n = (struct node*)malloc(sizeof(struct node*));
+    node* n = (struct node*)malloc(sizeof(struct node));
     n->data = data;
     n->next = NULL;
 }
@@ -23,7 +23,7 @@ void print(struct node* ptr)
 }
 struct node* insertEnd(struct node* head ,int data )
 {
-    struct node* ptr = (struct node*)malloc(sizeof(struct node*));
+    struct node* ptr = (struct node*)malloc(sizeof(struct node));
     node* p = head;
     ptr->data = data;
     while( p->next != NULL)
@@ -47,6 +47,6 @@ int main()
     q->next = r;
     r->next = s;
     print(p);
-    insertEnd(p,43);
+    p = insertEnd(p,43);
     print(p);
 }

@@ -6,7 +6,7 @@ struct node{
 };
 struct node* create(int data)
 {
-    node* n = (struct node*)malloc(sizeof(struct node*));
+    node* n = (struct node*)malloc(sizeof(struct node));
     n->data = data;
     n->next = NULL;
 }
@@ -22,7 +22,7 @@ void print(struct node* ptr)
 }
 struct node* insertatIndex(struct node* head ,int data ,int idx)
 {
-    struct node* ptr = (struct node*)malloc(sizeof(struct node*));
+    struct node* ptr = (struct node*)malloc(sizeof(struct node));
     node* p = head;
     int i = 0;
     while( i != idx-1)
@@ -46,6 +46,6 @@ int main()
     q->next = r;
     r->next = s;
     print(p);
-    insertatIndex(p,43,2);
+    p = insertatIndex(p,43,2);
     print(p);
 }
